@@ -12,18 +12,21 @@ import reservaMock from './mocks/reserva'
 import NavBar from './components/NavBar'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   const handleBuscarClick = async () => {
     console.log(reservaMock);
   }
 
+  const BotonRedireccionExterna = () => {
+    window.location.href = "http://localhost:8080"
+  };
+
 
   const [formData, setFormData] = useState({
-    OrdenID: '',
-    SessionID: '',
+    orden_id: '',
+    session_id: '',
     Monto: 0,
-    UrlRetorno: '',
+    url_retorno: '',
   })
 
 
@@ -31,11 +34,11 @@ function App() {
     e.preventDefault();
 
 
-    setFormData({
-      OrdenID: "345ab",
-      SessionID: "1234",
+    await setFormData({
+      orden_id: '345ab',
+      session_id: '1234',
       Monto: costoTotal,
-      UrlRetorno: "http://localhost:3000/"
+      url_retorno: 'http://localhost:3000/'
     })
 
 
@@ -82,8 +85,9 @@ function App() {
 
   return (
     <>
-      <div className="">
-        <NavBar></NavBar>
+      <NavBar></NavBar>
+      <div className="container">
+
         <div className="row">
           <div className="col-md-6 left">
             <Pagar2></Pagar2>
@@ -97,10 +101,13 @@ function App() {
             <Servicio></Servicio>
             <Hospedaje objeto={reservaMock} />
 
-            <div className="btn">
+            <div className="m-3">
 
               <Button className="buscar" variant="warning" onClick={handleSubmit}>
                 CONFIRMAR DATOS INGRESADOS
+              </Button>
+              <Button className="redireccionar" variant="warning" onClick={BotonRedireccionExterna}>
+                Ir a pagar
               </Button>
 
             </div>
