@@ -1,31 +1,44 @@
 import { useState } from 'react'
 import './App.css'
-import Compra from './component/Compra'
-import Hospedaje from './component/Hospedaje'
-import Pasajero from './component/Pasajero'
-import Servicio from './component/Servicio'
-import TotalPago from './component/TotalPago'
-import Pagar2 from './component/Pagar2'
-
+import Compra from './components/Compra'
+import Hospedaje from './components/Hospedaje'
+import Pasajero from './components/Pasajero'
+import Servicio from './components/Servicio'
+import TotalPago from './components/TotalPago'
+import Pagar2 from './components/Pagar2'
+import Footer from './components/Footer'
+import Button from 'react-bootstrap/Button'
+import reservaMock from './mocks/reserva'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const handleBuscarClick = async () => {
+    console.log(reservaMock);
+    }
   return (
     <>
-      <div class="container font">
-      <div class="row">
-          <div class="col-md-6 left">
+      <div className="container font">
+      <div className="row">
+          <div className="col-md-6 left">
             <Pagar2></Pagar2>
             <Pasajero></Pasajero>
             
             
           </div>
-          <div class="col-md-6 rigth">
-            <TotalPago></TotalPago>
-            <Compra></Compra>
+          <div className="col-md-6 rigth">
+            <TotalPago objeto={reservaMock} />
+            <Compra objeto={reservaMock} />
             <Servicio></Servicio>
-            <Hospedaje></Hospedaje>
+            <Hospedaje objeto={reservaMock} />
+
+            <div className="btn">
+
+            <Button className="buscar" variant="warning" onClick={handleBuscarClick}>
+            CONFIRMAR DATOS INGRESADOS
+           </Button>
+
+      </div>
             
             
             
@@ -33,6 +46,9 @@ function App() {
       </div>
       
     </div>
+    <div className='container-footer'>
+        <Footer />
+      </div>
     </>
   )
 }
