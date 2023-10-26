@@ -6,7 +6,7 @@ const reservaMock = {
     id_hh: 5,
     descripcion: "Viaje desde Santiago a Concepción",
     detalles: "Incluye vuelo y estancia en el Gran Hotel Santiago",
-    precio_viaje: 350,
+    precio_viaje: 350000,
     nombre_ciudad_origen: "Santiago",
     nombre_ciudad_destino: "Concepción",
     info_paquete: {
@@ -16,7 +16,7 @@ const reservaMock = {
       descripcion_habitacion: "Habitación doble con desayuno buffet.",
       servicios_habitacion:
         "Wi-Fi, TV de pantalla plana, Desayuno buffet, Minibar",
-      precio_noche: 120,
+      precio_noche: 120000,
       hotel_info: {
         id: 2,
         nombre: "Concepción Palace Hotel",

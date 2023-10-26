@@ -11,7 +11,7 @@ function TotalPago({ costoTotal }) {
           <p className="fw-bold text-light">Total vuelo</p>
           <i className="bi bi-airplane-fill plane"></i>
         </div>
-        <span className="text-light">${costoTotal}</span>
+        <span className="text-light"> $  {costoTotal}</span>
       </div>
     </div>
   );
