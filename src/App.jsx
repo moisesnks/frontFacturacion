@@ -22,24 +22,16 @@ function App() {
   };
 
 
-  const [formData, setFormData] = useState({
-    orden_id: '',
-    session_id: '',
-    Monto: 0,
-    url_retorno: '',
-  })
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
 
-    await setFormData({
+    const formData = {
       orden_id: '345ab',
       session_id: '1234',
       Monto: costoTotal,
       url_retorno: 'http://localhost:3000/'
-    })
+    }
 
 
     try {
@@ -78,7 +70,7 @@ function App() {
   // Calcula el costo total
   const costoTotal = costoVuelo + costoEstanciaHotel;
 
-  console.log(formData)
+  //console.log(formData)
 
 
 
