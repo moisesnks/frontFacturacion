@@ -2,7 +2,7 @@ import React from 'react';
 import './totalPago.css';
 
 function TotalPago({ costoTotal }) {
-
+  const costoFormateado = costoTotal.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' });
 
   return (
     <div className="row total m-3 shadow rounded">
@@ -11,7 +11,7 @@ function TotalPago({ costoTotal }) {
           <p className="fw-bold text-light">Total vuelo</p>
           <i className="bi bi-airplane-fill plane"></i>
         </div>
-        <span className="text-light"> $  {costoTotal}</span>
+        <span className="text-light"> {costoFormateado}</span>
       </div>
     </div>
   );

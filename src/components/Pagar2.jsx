@@ -23,7 +23,7 @@ function Pagar2() {
       <p className="fw-bold text-light">Seleccione un método de pago</p>
       <hr />
       <div className="col-auto m-2 box">
-        <label>
+        <label style={{ cursor: 'pointer' }}>
           <input
             type="radio"
             name="payment"
@@ -39,7 +39,7 @@ function Pagar2() {
         </label>
       </div>
       <div className="col-auto m-2 box">
-        <label>
+        <label style={{ cursor: 'pointer' }}>
           <input
             type="radio"
             name="payment"
