@@ -32,16 +32,15 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-
+  
+    // Actualiza el estado y espera a que se complete
     await setFormData({
       orden_id: '345ab',
       session_id: '1234',
       Monto: costoTotal,
       url_retorno: 'http://localhost:3000/'
-    })
-
-
+    });
+  
     try {
       const response = await fetch('http://localhost:8080/save-transaction', {
         method: 'POST',
@@ -50,7 +49,7 @@ function App() {
         },
         body: JSON.stringify(formData),
       });
-
+  
       if (response.ok) {
         // Maneja la respuesta exitosa, si es necesario
         console.log('Transacción guardada con éxito');
@@ -62,6 +61,7 @@ function App() {
       console.error('Error en la solicitud', error);
     }
   };
+  
 
 
 

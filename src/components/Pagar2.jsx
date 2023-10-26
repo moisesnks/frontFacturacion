@@ -60,7 +60,11 @@ function Pagar2() {
         <span
           className="cupon-link"
           onClick={toggleCuponInput}
-          style={{ color: "#13729B", cursor: "pointer" }}
+          style={{
+            color: "#01374E",
+            cursor: "pointer",
+            textDecoration: "underline",
+          }}
         >
           Ingrésalo Aquí
         </span>
