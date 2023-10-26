@@ -13,12 +13,16 @@ import NavBar from './components/NavBar'
 
 function App() {
 
+  const externalUrl = import.meta.env.VITE_API_URL;
+  const apiUrl = import.meta.env.VITE_API_URL;
+  const returnUrl = import.meta.env.VITE_RETURN_URL;
+
   const handleBuscarClick = async () => {
     console.log(reservaMock);
   }
 
   const BotonRedireccionExterna = () => {
-    window.location.href = "http://localhost:8080"
+    window.location.href = externalUrl;
   };
 
 
@@ -30,18 +34,18 @@ function App() {
       orden_id: '345ab',
       session_id: '1234',
       Monto: costoTotal,
-      url_retorno: 'http://localhost:3000/'
+      url_retorno: returnUrl,
     };
-  
+
     try {
-      const response = await fetch('http://localhost:8080/save-transaction', {
+      const response = await fetch(`${apiUrl}/save-transaction`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
-  
+
       if (response.ok) {
         // Maneja la respuesta exitosa, si es necesario
         console.log('Transacción guardada con éxito');
@@ -53,7 +57,7 @@ function App() {
       console.error('Error en la solicitud', error);
     }
   };
-  
+
 
 
 

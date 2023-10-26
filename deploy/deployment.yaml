@@ -1,0 +1,20 @@
+# front-facturacion.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-facturacion
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front-facturacion
+  template:
+    metadata:
+      labels:
+        app: front-facturacion
+    spec:
+      containers:
+      - name: front-facturacion
+        image: gcr.io/annular-form-401215/front-facturacion:v1
+        ports:
+        - containerPort: 3030
